@@ -1,28 +1,41 @@
+@font-face {
+  font-family: Overpass;
+  src: url(Overpass-VariableFont_wght.ttf);
+}
+
+:root {
+	--side-margin: 12.5%;
+	@media only screen and (max-width: 700px) {
+        --side-margin: 5%;
+    }
+}
+
 * {
     margin:0;
     padding:0;
-    font-family: "Open Sans", Arial, sans-serif;
+	font-family: Overpass, Arial, sans-serif;
+	letter-spacing: 0.01em;
+	font-weight: 400;
 }
 
 body {
     background-color: #ffffff;
-    
 }
 
 header {
-    width: 100%;
     height: 3rem;
     scroll-behavior: smooth;
     background-image: linear-gradient(0deg, rgba(238,238,238,0.7) 1px, rgba(255,255,255,0.65) 2px, rgba(255,255,255,0.9) 60%);
     backdrop-filter: blur(20px);
-    z-index: 100;
     position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .menu-full {
-    margin: 0 auto;
-    width: 75vw;
-    height: 3rem;
+    margin: 0 var(--side-margin);
+    height: 3em;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -37,10 +50,8 @@ header {
 }
 
 .logo {
-	flex: 3 2 14%;
-	min-width: 14.28571%;
+	min-width: 20%;
 	max-width: 21.2%;
-    margin-right: 3vw;
 }
 
 .links-container {
@@ -49,95 +60,90 @@ header {
 }
 
 .links {
-    display: inline-block;
     text-decoration: none;
     color: #000;
-    line-height: 2em;
-	border: 0;
-    padding: 0 1.5em;
-	margin: 0 -0.54em;
-    flex-shrink: 2;
+	height: 2em;
+    line-height: 2.2em;
+	white-space: nowrap;
+	font-size: 1.02em;
+    padding: 0 1.4vw;
+	margin: 0 -0.5em;
 	background-image: linear-gradient(113deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 .95em, rgba(0,0,0,0) 1em),linear-gradient(293deg, rgba(0,0,0,0) .8em, rgba(0,0,0,0) .85em, rgba(0,0,0,0) .95em, rgba(0,0,0,0) 1em),linear-gradient(113deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%);
-	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0em top -2em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
-	background-size: 100% 2em, 100% 2em, 100% 2em, 100% 2em, 100% 2em, 100% 2em, 100% 2em, 100% 2em;
+	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0 top -2em,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
 	background-repeat: no-repeat;
 	transition: color 150ms, background-position 200ms ease-out;
 }
-
 .links:hover {
-	background-position: left 0em top 0em,right 0em top 0em,left 0em top -2em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
+	background-position: left 0 top 0,right 0 top 0,left 0 top -2em,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
 	color: white;
 }
-
 .links:active, .links:focus {
-	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0em top -2em,right 0em top 0em,left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em;
+	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0 top -2em,right 0 top 0,left 0 top 0,right 0 top 0,left 0 top 0,right 0 top 0;
 	color: black;
 }
-
 .links-first {
-	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0em top 0em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
+	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0 top 0,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
+	padding-left: 1.3em;
 }
-
 .links-first:hover {
-	background-position: left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
+	background-position: left 0 top 0,right 0 top 0,left 0 top 0,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
 }
-
 .links-first:active, .links-first:focus {
-	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em;
+	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0 top 0,right 0 top 0,left 0 top 0,right 0 top 0,left 0 top 0,right 0 top 0;
 	color: black;
 }
-
 .links-last {
-	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0em top 0em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
+	background-image: linear-gradient(113deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, rgba(0,0,0,0) .85em, rgba(0,0,0,0) .95em, rgba(0,0,0,0) 1em),linear-gradient(293deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de .95em, rgba(0,0,0,0) 1em),linear-gradient(113deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%);
+	background-position: left -0.85em top 2em,right 0.85em top 2em,left 0 top -2em,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
+	padding-right: 1.3em;
 }
-
 .links-last:hover {
-	background-position: left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em,left 0.7em top -2em,right -0.8em top -2em,left 0em top 0em,right 0em top 0em;
+	background-position: left 0 top 0,right 0 top 0,left 0 top -2em,right 0 top 0,left 0.7em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
 }
-
 .links-last:active, .links-last:focus {
-	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em,left 0em top 0em,right 0em top 0em;
+	background-position: left -0.8em top 1.85em,right 0.8em top 1.85em,left 0 top -2em,right 0 top 0,left 0 top 0,right 0 top 0,left 0 top 0,right 0 top 0;
 	color: black;
 }
 
 .actions {
     display: flex;
+	align-items: center;
 }
 
-.searchbar {
+.searchbar-full {
     width: 7em;
-    height: 1.5em;
-    margin-bottom: 0.4em;
-    position: relative;
+    height: 1.8em;
+	position: relative;
+	@media only screen and (max-width: 1000px) {
+        display: none;
+    }
 }
 
 .search-menu {
 	width: 100%;
-	height: 5em;
+	height: 21em;
 	background-color: transparent;
 	position: absolute;
 	right: 0;
 	background-image: url("data:image/svg+xml,%3csvg width='21' height='22' viewBox='0 0 22 23' fill='none' xmlns='http%3a%2f%2fwww.w3.org%2f2000%2fsvg'%3e%3cpath fill='black' d='m17.9 16.9l4.1 4.1c0 0 0 0 0 0.1c0 0 0 0.1 0 0.1c0 0 0 0.1 0 0.1c0 0 0 0.1 0 0.1l-1.2 1.2c0 0 0 0 -0.1 0c0 0 -0.1 0 -0.1 0c0 0 -0.1 0 -0.1 0c0 0 -0.1 0 -0.1 0l-2.5 -2.5v-3z'%2f%3e%3cpath fill='black' fill-rule='evenodd' clip-rule='evenodd' d='m14.8 13.8l0 0c1.1 -1.4 1.7 -3.2 1.7 -5c0 -2.2 -0.9 -4.3 -2.4 -5.8c-1.6 -1.6 -3.6 -2.4 -5.8 -2.4c-2.2 0 -4.3 0.9 -5.8 2.4c-1.6 1.6 -2.4 3.6 -2.4 5.8c0 2.2 0.9 4.3 2.4 5.8c1.6 1.6 3.6 2.4 5.8 2.4c1.8 0 3.6 -0.6 5 -1.7l0 0c0.6 -0.4 1.1 -0.9 1.5 -1.5zm-6.6 1.1c1.6 0 3.2 -0.6 4.4 -1.8c1.2 -1.2 1.8 -2.7 1.8 -4.4c0 -1.6 -0.6 -3.2 -1.8 -4.4c-1.2 -1.2 -2.7 -1.8 -4.4 -1.8c-1.6 0 -3.2 0.6 -4.4 1.8c-1.2 1.2 -1.8 2.7 -1.8 4.4c0 1.6 0.6 3.2 1.8 4.4c1.2 1.2 2.7 1.8 4.4 1.8z'%2f%3e%3cpath fill='%23FF6600' d='m17 15.9v3l-3 -3c0.6 -0.4 1.1 -1 1.5 -1.5l1.5 1.5z'%2f%3e%3c%2fsvg%3e");
     background-repeat: no-repeat;
-    background-position: right 0.25em top 0.1em;
-	transition: width 0.2s ease-in-out, height 0.1s ease-in-out, background-color 0.2s, box-shadow 0.2s;
+    background-position: right 0.25em top 0.2em;
+	transition: width 0.2s ease-in-out, height 0.1s ease-out, background-color 0.2s, box-shadow 0.2s;
 }
 
 .search-input {
 	box-sizing: border-box;
     width: 100%;
     border: 0;
-    padding: 0.1em 1.6em 0 0.4em;
+    padding: 0.3em 1.6em 0.1em 0.4em;
     background-color: transparent;
     font-size: 1.1em;
     caret-color: #f60;
-    font-weight: 400; 
 	border-bottom: solid 1px;
 }
 
 .search-input:focus {
     outline: none;
-	
 }
 
 .search-menu:has(.search-input:focus) {
@@ -152,5 +158,59 @@ header {
 }
 
 .search-menu:has(.search-input:placeholder-shown) {
-	height: 1.6em;
+	height: 100%;
+}
+
+.searchbar-small {
+	display: block;
+	position: relative;
+	height: 1.5em;
+	width: 1.5em;
+	margin-right: 0.5em;
+	background-image: url("data:image/svg+xml,%3csvg width='25' height='26' viewBox='0 0 22 23' fill='none' xmlns='http%3a%2f%2fwww.w3.org%2f2000%2fsvg'%3e%3cpath fill='black' d='m17.9 16.9l4.1 4.1c0 0 0 0 0 0.1c0 0 0 0.1 0 0.1c0 0 0 0.1 0 0.1c0 0 0 0.1 0 0.1l-1.2 1.2c0 0 0 0 -0.1 0c0 0 -0.1 0 -0.1 0c0 0 -0.1 0 -0.1 0c0 0 -0.1 0 -0.1 0l-2.5 -2.5v-3z'%2f%3e%3cpath fill='black' fill-rule='evenodd' clip-rule='evenodd' d='m14.8 13.8l0 0c1.1 -1.4 1.7 -3.2 1.7 -5c0 -2.2 -0.9 -4.3 -2.4 -5.8c-1.6 -1.6 -3.6 -2.4 -5.8 -2.4c-2.2 0 -4.3 0.9 -5.8 2.4c-1.6 1.6 -2.4 3.6 -2.4 5.8c0 2.2 0.9 4.3 2.4 5.8c1.6 1.6 3.6 2.4 5.8 2.4c1.8 0 3.6 -0.6 5 -1.7l0 0c0.6 -0.4 1.1 -0.9 1.5 -1.5zm-6.6 1.1c1.6 0 3.2 -0.6 4.4 -1.8c1.2 -1.2 1.8 -2.7 1.8 -4.4c0 -1.6 -0.6 -3.2 -1.8 -4.4c-1.2 -1.2 -2.7 -1.8 -4.4 -1.8c-1.6 0 -3.2 0.6 -4.4 1.8c-1.2 1.2 -1.8 2.7 -1.8 4.4c0 1.6 0.6 3.2 1.8 4.4c1.2 1.2 2.7 1.8 4.4 1.8z'%2f%3e%3cpath fill='%23FF6600' d='m17 15.9v3l-3 -3c0.6 -0.4 1.1 -1 1.5 -1.5l1.5 1.5z'%2f%3e%3c%2fsvg%3e");
+    background-position: center;
+	background-repeat: no-repeat;
+	@media only screen and (min-width: 1000px) {
+        display: none;
+    }
+}
+
+.account {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	margin-left: 1vw;
+	position: relative;
+}
+
+.account-img-default {
+	font-size: 21px;
+	visibility: hidden;
+}
+
+.account-img {
+	border-radius: 28%;
+	width:100%;
+	height: 100%;
+}
+
+.account-status {
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	background-color: #00b300;
+	border-radius: 50%;
+	bottom: -4px;
+	right: -4px
+}
+
+.account-menu {
+	width: 20em;
+	height: 0;
+	position: absolute;
+	top: 39px;
+	right: -148px;
+	box-shadow: 0 0.5em 1em rgba(0,0,0,0.3);
+	transition: height 0.2s ease-out;
 }
