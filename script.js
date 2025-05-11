@@ -1,19 +1,16 @@
 const account_menu = document.getElementById("account-menu");
-const output = document.getElementById("output");
+const account_icon = document.getElementById("account-icon");
 
-window.addEventListener("scroll", (event) => {
-    let scroll = this.scrollY;
-    if (scroll != 0) {
-      output.style.borderBottom = "solid 1px";
-  } else {
-      output.style.borderBottom = "0";
-  }
+document.addEventListener('mousedown', function(e) {
+    if (account_icon.contains(e.target)) {
+        if (account_menu.style.height == "0px") {
+            account_menu.style.height = "30em";
+        } else {
+            account_menu.style.height = "0px";
+        }
+    } else if (!account_menu.contains(e.target)) {
+        account_menu.style.height = "0px";
+    }
 });
 
-function toggleUserMenu() {
-    if (account_menu.style.height == "30em") {
-      account_menu.style.height = "0";
-  } else {
-      account_menu.style.height = "30em";
-  }
-}
+
