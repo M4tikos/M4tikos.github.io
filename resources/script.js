@@ -1,5 +1,6 @@
 const account_menu = document.getElementById("account-menu");
-const mobile_side_menu = document.getElementById("mobile-side-menu");
+const account_menu_mobile = document.getElementById("account-menu-mobile");
+const mobile_side_menu_container = document.getElementById("mobile-side-menu-container");
 const mobile_side_menu_background = document.getElementById("mobile-side-menu-background");
 
 document.addEventListener('mouseup', function(e) {
@@ -7,6 +8,11 @@ document.addEventListener('mouseup', function(e) {
         account_menu.style.opacity = "0";
         account_menu.style.fontSize = "0.8em";
         account_menu.style.pointerEvents = "none";
+    }
+    if (!account_menu_mobile.contains(e.target) && account_menu_mobile.style.opacity == "1") {
+        account_menu_mobile.style.opacity = "0";
+        account_menu_mobile.style.fontSize = "0.8em";
+        account_menu_mobile.style.pointerEvents = "none";
     }
 });
 
@@ -18,15 +24,23 @@ function openUserMenu() {
     }
 }
 
+function openUserMenuMobile() {
+    if (window.getComputedStyle(account_menu_mobile).opacity != "1") {
+        account_menu_mobile.style.opacity = "1";
+        account_menu_mobile.style.fontSize = "1em";
+        account_menu_mobile.style.pointerEvents = "all";
+    }
+}
+
 function openMobileNavMenu() {
-    mobile_side_menu.style.width = "20em";
-    mobile_side_menu_background.style.pointerEvents = "all";
+    mobile_side_menu_container.style.left = "0";
+    mobile_side_menu_container.style.pointerEvents = "all";
     mobile_side_menu_background.style.opacity = "1";
 
 }
 
 function closeMobileNavMenu() {
-    mobile_side_menu.style.width = "0";
-    mobile_side_menu_background.style.pointerEvents = "none";
+    mobile_side_menu_container.style.left = "-20em";
+    mobile_side_menu_container.style.pointerEvents = "none";
     mobile_side_menu_background.style.opacity = "0";
 }

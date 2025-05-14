@@ -259,35 +259,43 @@ header {
 	position: fixed;
 	display: flex;
 	top: 0;
-	left: 0;
-	width: 100vw;
+	left: -20em;
+	width: calc(100vw + 20em);
 	height: 100vh;
 	z-index: 1000;
 	pointer-events: none;
-	background-color: transparent;
+	transition: left 0.5s;
 }
 
 .mobile-side-menu-background {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	flex-grow: 1;
-	pointer-events: none;
 	opacity: 0;
 	backdrop-filter: blur(5px);
 	transition: opacity 0.5s, backdrop-filter 0.5s;
 }
 
 .mobile-side-menu {
-	width: 0;
+	width: 20em;
 	height: 100%;
 	background-color: rgb(255, 255, 255);
-	transition: width 0.5s;
+	padding: 1em;
+	box-sizing: border-box;
 }
 
 .logo-mobile {
 	width: 12em;
 	background-image: url(../logos.svg#bng-drive);
 	height: 2em;
+}
+
+.account-mobile {
+	margin-right: 1em;
+	width: 32px;
+	height: 32px;
+	margin-left: 1vw;
+	position: relative;
 }
 
 .searchbar-mobile {
