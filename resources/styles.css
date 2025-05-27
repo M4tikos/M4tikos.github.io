@@ -278,6 +278,7 @@ header {
 	z-index: 11;
 	box-sizing: border-box;
 	transition: left 0.5s;
+	will-change: left;
 }
 
 .logo-mobile {
