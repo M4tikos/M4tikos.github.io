@@ -33,14 +33,16 @@ function openUserMenuMobile() {
 }
 
 function openMobileNavMenu() {
-    mobile_side_menu.style.left = "0";
+    mobile_side_menu.style.transform = "translateX(0em)";
+    mobile_side_menu.style.pointerEvents = "all";
     mobile_side_menu_background.style.pointerEvents = "all";
-    mobile_side_menu_background.style.opacity = "0";
+    mobile_side_menu_background.style.opacity = "1";
 
 }
 
 function closeMobileNavMenu() {
-    mobile_side_menu.style.left = "-20em";
+    mobile_side_menu.style.transform = "translateX(-20em)";
+    mobile_side_menu.style.pointerEvents = "none";
     mobile_side_menu_background.style.pointerEvents = "none";
     mobile_side_menu_background.style.opacity = "0";
 }
