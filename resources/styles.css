@@ -276,7 +276,7 @@ header {
 	z-index: 11;
 	box-sizing: border-box;
 	transform: translateX(-20em);
-	transition: transform 0.4s;
+	transition: transform 0.3s ease-out;
 	pointer-events: none;
 }
 
