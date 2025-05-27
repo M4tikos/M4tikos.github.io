@@ -35,41 +35,42 @@
                     <div class="account">
                         <div class="account-status"></div>
                         <button class="account-button" onclick="openUserMenu()"></button>
-                        <div id="account-menu" class="account-menu">
-                            <div class="menu-user"><div class="menu-userimg"></div><div class="menu-username"></div></div>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="menu-mobile">
                 <button class="menu-button-mobile" onclick="openMobileNavMenu()"></button>
-                    <div class="mobile-side-menu" id="mobile-side-menu">
-                        <form><div class="searchbar-mobile">
-                            <div class="search-menu-mobile">
-                                <input type="text" placeholder="Search" name="search" title="Search" class="search-input-mobile">
-                            </div>
-                        </div></form>
-                        <nav class="links-container-mobile">
-                            <a class="links-mobile" href="https://www.beamng.com/game/news/" title="News">News</a>
-                            <a class="links-mobile" href="https://www.beamng.com/forums/" title="Forums">Forums</a>
-                            <a class="links-mobile" href="../resources/" title="Mods">Mods</a>
-                            <a class="links-mobile" href="https://documentation.beamng.com/" title="Documentation">Documentation</a>
-                            <a class="links-mobile" href="https://beamng.com/game/support/policies/forum-rules/" title="Forun rules">Forum rules</a>
-                        </nav>
-                    </div>
-                    <div id="mobile-side-menu-background" onclick="closeMobileNavMenu()" class="mobile-side-menu-background"></div>
                 <a class="logo-mobile" href="https://www.beamng.com/game/" title="BeamNG.drive"></a>
                 <div class="account-mobile">
                     <div class="account-status"></div>
-                    <button class="account-button" onclick="openUserMenuMobile()"></button>
-                    <div id="account-menu-mobile" class="account-menu">
-                        <div class="menu-user"><div class="menu-userimg"></div><div class="menu-username"></div></div>
-                    </div>
+                    <button class="account-button" onclick="openUserMenu()"></button>
                 </div>
             </div>
         </header>
-        <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
+        <div id="mobile-side-menu-background" onclick="closeMobileNavMenu()" class="mobile-side-menu-background"></div>
+        <div class="mobile-side-menu" id="mobile-side-menu">
+            <form><div class="searchbar-mobile">
+                <div class="search-menu-mobile">
+                    <input type="text" placeholder="Search" name="search" title="Search" class="search-input-mobile">
+                </div>
+            </div></form>
+            <nav class="links-container-mobile">
+                <a class="links-mobile" href="https://www.beamng.com/game/news/" title="News">News</a>
+                <a class="links-mobile" href="https://www.beamng.com/forums/" title="Forums">Forums</a>
+                <a class="links-mobile" href="../resources/" title="Mods">Mods</a>
+                <a class="links-mobile" href="https://documentation.beamng.com/" title="Documentation">Documentation</a>
+                <a class="links-mobile" href="https://beamng.com/game/support/policies/forum-rules/" title="Forun rules">Forum rules</a>
+            </nav>
+        </div>
+
+        <div id="account-menu" class="account-menu">
+            <div class="menu-user"><div class="menu-userimg"></div><div class="menu-username"></div></div>
+        </div>
+
+        <main>
+            <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
