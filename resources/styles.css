@@ -253,34 +253,31 @@ header {
 	flex: 0 0 auto;
 }
 
-.mobile-side-menu-container {
-	position: fixed;
-	display: flex;
-	top: 0;
-	left: -20em;
-	width: calc(100vw + 20em);
-	height: 100vh;
-	z-index: 1000;
-	pointer-events: none;
-	transition: left 0.5s;
-}
-
 .mobile-side-menu-background {
-	height: 100%;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
 	background-color: rgba(0, 0, 0, 0.6);
-	flex-grow: 1;
 	opacity: 0;
-	backdrop-filter: blur(5px);
-	transition: opacity 0.5s, backdrop-filter 0.5s;
+	backdrop-filter: blur(0px);
+	z-index: 10;
+	transition: opacity 0.5s;
+	pointer-events: none;
 }
 
 .mobile-side-menu {
+	position: fixed;
 	width: 20em;
-	height: 100%;
-	background-color: rgba(255, 255, 255, 0.75);
-	backdrop-filter: blur(20px);
+	height: 100vh;
+	top: 0;
+	left: -20em;
+	background-color: rgb(255, 255, 255);
 	padding: 1em;
+	z-index: 11;
 	box-sizing: border-box;
+	transition: left 0.5s;
 }
 
 .logo-mobile {
@@ -353,7 +350,7 @@ header {
 
 .links-mobile {
 	display: inline-block;
-	background-color: rgba(236, 238, 241, 0.5);
+	background-color: rgb(236, 238, 241);
 	box-sizing: border-box;
 	width: 18rem;
 	padding: 0.7rem 0.8rem 0.5rem 0.9rem;
@@ -365,7 +362,7 @@ header {
 }
 
 .links-mobile:hover {
-	background-color: rgba(210, 213, 218, 0.5);
+	background-color: rgb(210, 213, 218);
 }
 
 .links-mobile:active  {
