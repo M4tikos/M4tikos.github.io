@@ -35,7 +35,7 @@ function openUserMenuMobile() {
 function openMobileNavMenu() {
     mobile_side_menu.style.left = "0";
     mobile_side_menu_background.style.pointerEvents = "all";
-    mobile_side_menu_background.style.opacity = "1";
+    mobile_side_menu_background.style.opacity = "0";
 
 }
 
