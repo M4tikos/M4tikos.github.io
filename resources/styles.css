@@ -66,7 +66,7 @@ header {
     padding: 0 calc(0.7vw + 13px);
 	margin: 0 -0.5em;
 	background-repeat: no-repeat;
-	transition: color 150ms, background-position 200ms ease-out;
+	transition: color 0.15s, background-position 0.15s ease-out;
 }
 .links {
 	color: #000000;
@@ -275,8 +275,8 @@ header {
 	padding: 1em;
 	z-index: 11;
 	box-sizing: border-box;
-	transform: translateX(-20em);
-	transition: transform 0.3s ease-out;
+	transform: translateX(-20em) translate3d(0, 0, 0);
+	transition: transform 0.3s;
 	pointer-events: none;
 }
 
