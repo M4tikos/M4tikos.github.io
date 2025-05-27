@@ -276,6 +276,7 @@ header {
 	z-index: 11;
 	box-sizing: border-box;
 	transform: translateX(-20em) translate3d(0, 0, 0);
+	will-change: transform;
 	transition: transform 0.3s;
 	pointer-events: none;
 }
