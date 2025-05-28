@@ -5,7 +5,7 @@ const mobile_side_menu_background = document.getElementById("mobile-side-menu-ba
 document.addEventListener('mouseup', function(e) {
     if (!account_menu.contains(e.target) && account_menu.style.opacity == "1") {
         account_menu.style.opacity = "0";
-        account_menu.style.fontSize = "0.8em";
+        account_menu.style.transform = "scale(0.8) translate(12.5%, -12.5%)";
         account_menu.style.pointerEvents = "none";
     }
 });
@@ -13,7 +13,7 @@ document.addEventListener('mouseup', function(e) {
 function openUserMenu() {
     if (window.getComputedStyle(account_menu).opacity != "1") {
         account_menu.style.opacity = "1";
-        account_menu.style.fontSize = "1em";
+        account_menu.style.transform = "scale(1, 1) translate(0, 0)";
         account_menu.style.pointerEvents = "all";
     }
 }
