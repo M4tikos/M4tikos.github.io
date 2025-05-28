@@ -4,7 +4,7 @@
 
 :root {
 	--side-margin: 12.5%;
-	@media only screen and (max-width: 1050px) {
+	@media only screen and (max-width: 1100px) {
         --side-margin: 1em;
     }
 }
@@ -22,37 +22,37 @@ body {
 }
 
 header {
-    height: 3rem;
-    scroll-behavior: smooth;
+    height: 3em;
     background-image: linear-gradient(0deg, rgba(238,238,238,0.7) 1px, rgba(255,255,255,0.65) 2px, rgba(255,255,255,0.9) 60%);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
     position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 100;
-}
-
-.menu-full {
-    margin: 0 var(--side-margin);
-    height: 3em;
-    justify-content:space-between;
+	padding: 0 var(--side-margin);
+	display: flex;
+	justify-content:space-between;
     align-items: center;
-	display: none;
-    @media only screen and (min-width: 800px) {
-        display: flex;
-    }
 }
 
 .logo {
-	width: 21.2%;
+	width: 15em;
 	background-image: url(../logos.svg#bng-drive);
 	height: 2em;
+	margin-right: 2em;
+	@media only screen and (max-width: 800px) {
+        margin-left: 4em;
+		margin-right: 3em;
+    }
 }
 
 .links-container {
     display: flex;
     align-items: center;
+	@media only screen and (max-width: 800px) {
+        display: none;
+    }
 }
 
 .links {
@@ -66,9 +66,6 @@ header {
 	margin: 0 -0.5em;
 	background-repeat: no-repeat;
 	transition: color 0.15s, background-position 0.15s ease-out;
-}
-.links {
-	color: #000000;
 	background-image: linear-gradient(113deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 40%, rgba(255,102,0,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, #f60 .85em, #f60 .95em, rgba(0,0,0,0) 1em),linear-gradient(293deg, rgba(0,0,0,0) .8em, rgba(0,0,0,0) .85em, rgba(0,0,0,0) .95em, rgba(0,0,0,0) 1em),linear-gradient(113deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #c2d3de .85em, #c2d3de 40%, rgba(194,211,222,0) 80%),linear-gradient(113deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%),linear-gradient(293deg, rgba(0,0,0,0) .8em, #f2f4f6 .85em, #f2f4f6 40%, rgba(242,244,246,0) 80%);
 	background-position: left -0.85em top 2em,right 0.9em top 2em,left 0 top -2em,right 0 top 0,left 0.8em top -2em,right -0.8em top -2em,left 0 top 0,right 0 top 0;
 }
@@ -109,18 +106,21 @@ header {
 }
 
 .actions {
-    display: flex;
-	align-items: center;
+	display: flex;
+	margin-left: 1em;
 }
 
-.searchbar-full {
+.searchbar-desktop {
 	min-width: 5em;
     width: 7vw;
     height: 1.8em;
 	position: relative;
+	@media only screen and (max-width: 800px) {
+        display: none;
+    }
 }
 
-.search-menu {
+.search-menu-desktop {
 	width: 100%;
 	height: 21em;
 	background-color: transparent;
@@ -133,7 +133,7 @@ header {
 	transition: width 0.2s ease-in-out, height 0.1s ease-out, background-color 0.2s, box-shadow 0.2s, backdrop-filter 0.1s;
 }
 
-.search-input {
+.search-input-desktop {
 	box-sizing: border-box;
     width: 100%;
     border: 0;
@@ -145,19 +145,19 @@ header {
 	outline: none;
 }
 
-.search-menu:has(.search-input:focus) {
+.search-menu-desktop:has(.search-input-desktop:focus) {
 	background-color: rgba(255, 255, 255, 0.7);
 	backdrop-filter: blur(20px);
 	width: 500px;
 	box-shadow: 0 0.5em 1em rgba(0,0,0,0.3);
 }
 
-.search-input::placeholder {
+.search-input-desktop::placeholder {
     color: #666;
     font-size: 0.8em;
 }
 
-.search-menu:has(.search-input:placeholder-shown) {
+.search-menu-desktop:has(.search-input-desktop:placeholder-shown) {
 	height: 100%;
 	border-radius: 5px 5px 0 0;
 }
@@ -165,7 +165,7 @@ header {
 .account {
 	width: 32px;
 	height: 32px;
-	margin-left: 1vw;
+	margin-left: 1em;
 	position: relative;
 }
 
@@ -198,9 +198,9 @@ header {
 	height: 30em;
 	position: fixed;
 	top: 3em;
-	right: 1em;
+	right: calc(var(--side-margin) - 1em);
 	font-size: 1em;
-	border-radius: 0.6em;
+	border-radius: 10px;
 	background-color: rgba(255, 255, 255, 0.6);
 	backdrop-filter: blur(20px);
 	opacity: 0;
@@ -215,7 +215,7 @@ header {
 .menu-userimg {
 	width: 30%;
 	height: 59%;
-	border-radius: 0.6em;
+	border-radius: 10px;
 	float: left;
 	background-image: url(../445510.jpg);
 	background-repeat: no-repeat;
@@ -229,20 +229,9 @@ header {
 	content: "User01";
 }
 
-.menu-mobile {
-    margin: 0;
-    height: 3em;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    @media only screen and (min-width: 800px) {
-        display: none;
-    }
-}
-
 .menu-button-mobile {
 	height: 32px;
-	width: 64px;
+	width: 32px;
 	background-color: transparent;
 	background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 48 48' xmlns='http%3a%2f%2fwww.w3.org%2f2000%2fsvg'%3e%3cpath d='M10 13H41L43 7H12L10 13ZM5 27H42L44 21H7L5 27ZM37 41H7L9 35H39L37 41Z' fill='black'%2f%3e%3c%2fsvg%3e");
     background-position: center;
@@ -250,6 +239,14 @@ header {
 	background-size: 1.8em;
     background-repeat: no-repeat;
 	flex: 0 0 auto;
+	display: none;
+	@media only screen and (max-width: 800px) {
+        display: inherit;
+    }
+}
+
+.menu-button-mobile:hover {
+	cursor:pointer;
 }
 
 .mobile-side-menu-background {
@@ -270,7 +267,7 @@ header {
 	width: 20em;
 	height: 100vh;
 	top: 0;
-	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.9);
 	padding: 1em;
 	z-index: 102;
 	box-sizing: border-box;
@@ -278,20 +275,7 @@ header {
 	will-change: transform;
 	transition: transform 0.4s;
 	pointer-events: none;
-}
-
-.logo-mobile {
-	width: 12em;
-	background-image: url(../logos.svg#bng-drive);
-	height: 2em;
-}
-
-.account-mobile {
-	margin-right: 1em;
-	width: 32px;
-	height: 32px;
-	margin-left: 1vw;
-	position: relative;
+	border-radius: 0 10px 10px 0;
 }
 
 .searchbar-mobile {
@@ -303,7 +287,6 @@ header {
 .search-menu-mobile {
 	width: 100%;
 	height: 30em;
-	background-color: transparent;
 	border-radius: 5px;
 	position: absolute;
 	right: 0;
@@ -326,13 +309,11 @@ header {
 }
 
 .search-menu-mobile:has(.search-input-mobile:focus) {
-	background-color: rgba(255, 255, 255, 0.7);
-	backdrop-filter: blur(20px);
+	background-color: rgb(246, 246, 246);
 	box-shadow: 0 0.5em 1em rgba(0,0,0,0.3);
 }
 
 .search-input-mobile::placeholder {
-    color: #666;
     font-size: 0.8em;
 }
 
@@ -350,7 +331,7 @@ header {
 
 .links-mobile {
 	display: inline-block;
-	background-color: rgb(236, 238, 241);
+	background-color: rgb(255, 255, 255);
 	box-sizing: border-box;
 	width: 18rem;
 	padding: 0.7rem 0.8rem 0.5rem 0.9rem;
