@@ -29,12 +29,6 @@ function openTab(name) {
 }
 
 function craftItem(craftingType, reset=false) {
-
-    let handle = window.open('https://w3schools.com');
-    handle.blur();
-    window.focus();
-
-
     outputItem = document.getElementById(craftingType + "Output").outputItem;
 
     if (!reset) {
