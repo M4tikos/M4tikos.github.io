@@ -1,0 +1,16 @@
+{
+    "host": "ftpupload.net",
+    "username": "if0_40926126",
+    "password": "6uzCcadNhdcY",
+    "remotePath": "htdocs/",
+    "protocol": "ftp",
+    "port": 0,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": true,
+    "autoDownload": true,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}

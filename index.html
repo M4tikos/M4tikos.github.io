@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft crafting recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/craftingTable.webp">
+    <script src="customElements.js"></script>
+    <script type="module" src="imports.js"></script>
+</head>
+<body>
+    <header style="display: none;">
+        <div id="craftingTab" class="menuTab active" style="background-image: url(images/craftingTable.webp);" onmousedown="openTab('crafting')"></div>
+        <div id="furnaceTab" class="menuTab" style="background-image: url(images/furnace.webp);" onmousedown="openTab('furnace')"></div>
+        <div id="smithingTab" class="menuTab" style="background-image: url(images/smithingTable.webp);" onmousedown="openTab('smithing')"></div>
+        <div id="brewingTab" class="menuTab" style="background-image: url(images/smithingTable.webp);" onmousedown="openTab('brewing')"></div>
+    </header>
+    <main>
+        <section class="left">
+            <div id="menus">
+                <div id="craftingMenu" class="craftingMenu">
+                    <div id="craftingGrid">
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="00"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="01"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="02"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="10"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="11"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="12"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="20"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="21"></div></div>
+                        <div class="itemBoxBorder"><div class="itemBox craftingSlot" data-position="22"></div></div>
+                    </div>
+                    <img src="images/arrow.webp" class="outputArrow">
+                    <div style="position: relative;">
+                        <div class="outputSlot" onmousedown="craftItem('crafting')"><div id="craftingOutput" class="outputIcon"><div id="craftingOutputAmount"></div></div></div>
+                        <button id="craftingReset" onmousedown="craftItem('crafting', true)">Reset</button>
+                    </div>
+                </div>
+
+                <div id="furnaceMenu" class="craftingMenu" style="display: none;">
+                    <div class="furnaceInputs">
+                        <div style="width: 58px; height: 58px;"><div class="itemBoxBorder"><div id="furnaceItemSlot" class="itemBox furnaceSlot"></div></div></div>
+                        <img src="images/furnaceFire.webp" class="furnaceFire">
+                        <div style="width: 58px; height: 58px;"><div class="itemBoxBorder"><div id="furnaceFuelSlot" class="itemBox"></div></div></div>
+                    </div>
+                    <img src="images/arrow.webp" class="outputArrow">
+                    <div class="outputSlot" onmousedown="craftItem('furnace')"><div id="furnaceOutput" class="outputIcon"></div></div>
+                </div>
+
+                <div id="smithingMenu" class="craftingMenu" style="display: none;">
+                    <div class="smithingInputs">
+                        <div style="width: 58px; height: 58px;" class="itemBoxBorder"><div class="itemBox smithingSlot" onmousedown="smithingBoxSelected(this)"></div></div>
+                        <div style="width: 58px; height: 58px;" class="itemBoxBorder"><div class="itemBox smithingSlot" onmousedown="smithingBoxSelected(this)"></div></div>
+                        <div style="width: 58px; height: 58px;" class="itemBoxBorder"><div class="itemBox smithingSlot" onmousedown="smithingBoxSelected(this)"></div></div>
+                    </div>
+                    <img src="images/arrow.webp" class="outputArrow">
+                    <div class="outputSlot" onmousedown="craftItem('furnace')"><div id="furnaceOutput" class="outputIcon"></div></div>
+                </div>
+
+                <div id="brewingMenu" class="craftingMenu" style="display: none;">
+                    <img src="images/brewingStand2.webp" alt="">
+                    
+                    <div class="brewingOutputs">
+                        <div style="top: 101px; left: 47px;" class="itemBoxBorder">
+                            <div class="itemBox smithingSlot" onmousedown="craftItem('brewing')"></div>
+                        </div>
+                        <div style="top: 66px; left: 121px" class="itemBoxBorder">
+                            <div class="itemBox smithingSlot" onmousedown="craftItem('brewing')"></div>
+                        </div>
+                        <div style="top: -15px; left: 195px;" class="itemBoxBorder">
+                            <div class="itemBox smithingSlot" onmousedown="craftItem('brewing')"></div>
+                        </div>
+                    </div>
+                    <div style="width: 58px; height: 58px; top: -66px; left: -136px; position: relative;" class="itemBoxBorder">
+                        <div id="brewingItemSlot" class="itemBox brewingSlot" onmousedown="brewingBoxSelected(this)"></div>
+                    </div>
+                    <div  style="width: 50px; height: 50px; top: -66px; left: 5px; position: relative;" class="outputSlot" onmousedown="craftItem('brewing')">
+                        <div id="brewingOutput" class="outputIcon"></div>
+                    </div>
+                </div>
+            </div>
+
+            <label for="itemSearch" style="margin-bottom: 20px;">Search items:
+                <input type="text" id="itemSearch" onfocus="this.select()">
+            </label>
+            <div id="itemsList">
+                <!--Items are added here-->
+            </div>
+        </section>
+
+        <section class="right">
+            <iframe 
+                id="yt-subwaysurfers" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=WSXuHl_a8clH98-h&amp;controls=0&autoplay=1&mute=1&cc_load_policy=1" 
+                frameborder="0"
+            ></iframe>
+            <iframe 
+                id="yt-subwaysurfers" 
+                src="https://www.youtube.com/embed/sPRDL4RNzYM?si=2nESRzu1VNpXnDur&amp;controls=0&autoplay=1&mute=1" 
+                frameborder="0"
+            ></iframe>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
