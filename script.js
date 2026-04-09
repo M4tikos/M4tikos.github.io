@@ -17,7 +17,6 @@ let furnaceSlot = "";
 let currentOpenTab = "crafting";
 
 
-
 function openTab(name) {
     document.getElementById(currentOpenTab + "Tab").classList.remove("active");
     document.getElementById(currentOpenTab + "Menu").style.display = "none";
